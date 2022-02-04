@@ -5,16 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Todo extends Model
+class Subtodo extends Model
 {
     use HasFactory;
 
     protected $fillable = [
+        'todo_id',
         'nama'
     ];
 
-    public function Subtodos()
+    public function Todo()
     {
-        return $this->hasMany(Subtodo::class);
+        return $this->belongsTo(Todo::class);
     }
 }

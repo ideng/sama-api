@@ -2,9 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\Todo;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class TodoFactory extends Factory
+class SubtodoFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,6 +15,7 @@ class TodoFactory extends Factory
     public function definition()
     {
         return [
+            'todo_id' => Todo::factory(),
             'nama' => $this->faker->word()
         ];
     }
